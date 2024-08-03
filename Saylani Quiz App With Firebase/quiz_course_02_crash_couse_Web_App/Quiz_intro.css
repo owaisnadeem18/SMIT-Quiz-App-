@@ -1,0 +1,164 @@
+.subject-descr-box {
+  margin: 2rem 0;
+  font-weight: 200;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.subject-descr-box h1 {
+  font-weight: 300;
+  margin: 1rem 0 1rem 0;
+  color: #0d6db7;
+  padding: 0;
+}
+
+.subject-descr-box .quiz-num {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.accordion {
+  overflow-anchor: none;
+}
+
+.accordion-button {
+  background-color: #f4f4f4;
+  font-weight: 400;
+}
+
+.accordion-button:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #f4f4f4;
+}
+
+.accordion-button::after {
+  order: -1; /* This moves the arrow to the left */
+  margin-right: 10px; /* Adds space between the arrow and text */
+  margin-left: 0; /* Removes space from the left */
+  transition: content 0.3s ease; /* Smooth transition */
+  color: black;
+}
+
+.accordion-button:not(.collapsed)::after {
+  color: black; /* Arrow color */
+}
+
+/* Ensuring the child accordions are also covered */
+#accordionFlushExample .accordion-button:focus,
+#childAccordion .accordion-button:focus {
+  box-shadow: none;
+  background-color: f4f4f4;
+  color: black;
+}
+
+.accordion-button:focus::after,
+.accordion-button:hover::after {
+  color: black;
+}
+
+#childAccordion .accordion-button {
+  background-color: #f4f4f4;
+  color: black;
+}
+
+table {
+  border: 3px solid red;
+}
+
+.accordion-item {
+  border: 3px solid red;
+}
+
+.accordion-flush {
+  background-color: black;
+  border: 2px solid #f4f4f4;
+  margin-bottom: 3rem;
+}
+
+#childCollapseOne table tr {
+  padding: 2rem 3rem;
+}
+
+#childCollapseOne table th {
+  padding: 1rem;
+}
+
+#childCollapseOne table td {
+  padding: 1rem;
+}
+
+#childCollapseOne table thead td {
+  border-bottom: 2px solid #f4f4f4;
+}
+
+#childCollapseOne table thead th {
+  border-bottom: 2px solid #dee2e6;
+  color: #0d6db7;
+}
+
+.quiz-detail-table {
+  padding: 1rem 3rem;
+}
+
+#childAccordion {
+  border: 2px solid #f4f4f4;
+}
+
+.table-parent {
+  padding: 1rem;
+}
+
+.table-parent table {
+  border-top: 2px solid #f4f4f4;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.table-parent table tr td,
+.table-parent table tr th {
+  border-top: 2px solid #f4f4f4;
+  border-bottom: none;
+}
+
+.table-parent table th {
+  width: 15%;
+}
+
+.table-parent table .last-tr {
+  border-bottom: none;
+}
+
+.table-parent table button {
+  border-radius: 0;
+  border: 1px solid #0d6db7;
+}
+
+.table-parent table button:focus {
+  outline: none; /* Remove the default focus outline */
+  box-shadow: none; /* Remove the default box shadow */
+}
+
+.table-parent table button:hover {
+  outline: none; /* Remove the default focus outline */
+  box-shadow: none; /* Remove the default box shadow */
+}
+
+@media screen and (max-width: 580px) {
+  .subject-descr-box {
+    margin: 2rem 0.5rem;
+  }
+}

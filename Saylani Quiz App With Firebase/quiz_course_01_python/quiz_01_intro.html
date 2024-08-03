@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMIT- Python Quiz</title>
+
+    <link
+      rel="shortcut icon"
+      href="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="../Local Storage in JavaScript//bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../Local Storage in JavaScript/dashboard.css"
+    />
+
+    <link rel="stylesheet" href="../Local Storage in JavaScript/style.css" />
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="quiz_01_intro.css" />
+
+  </head>
+  <body>
+    <div id="spinner-div">
+      <div class="spinner-grow text-primary" id="Spinner" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div id="main-content">
+      <nav class="navbar-smit">
+        <div class="container navbar-header">
+          <div class="img">
+            <img src="https://quiz.saylaniwelfare.com/images/smit.png" alt="" />
+          </div>
+
+          <div id="right-navbar">
+            <img id="User-profile-pic" src="" alt="" />
+            <div class="details" id="details-box-navbar">
+              <p id="userNavbar-Name"></p>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+                id="downward-arrow"
+              >
+                <path d="M128 192l128 128 128-128z"></path>
+              </svg>
+
+              <div class="popup-content" id="popUp">
+                <div
+                  style="
+                    height: 10px;
+                    width: 10px;
+                    position: absolute;
+                    background: rgb(255, 255, 255);
+                    transform: rotate(225deg);
+                    margin: -5px;
+                    z-index: -1;
+                    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
+                    top: 0%;
+                    left: 146.375px;
+                  "
+                  class="popup-arrow"
+                ></div>
+                <div class="logout-bar">
+                  <div>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="26"
+                      width="26"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-600-80h56c4.4 0 8-3.6 8-8V560c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v144c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V384c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v320c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V462c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v242c0 4.4 3.6 8 8 8zm152 0h56c4.4 0 8-3.6 8-8V304c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v400c0 4.4 3.6 8 8 8z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="logout-text">Results</div>
+                </div>
+                <div class="logout-bar" id="logOutBtn">
+                  <div>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="26"
+                      width="26"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 0 1-112.7 75.9A352.8 352.8 0 0 1 512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 0 1-112.7-75.9 353.28 353.28 0 0 1-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 0 0 0-12.6z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="logout-text">Logout</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row subject-descr-box">
+          <h1>Python <span class="quiz-num">(1 Subjects)</span></h1>
+          <hr />
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <!-- -----  -->
+
+            <div class="accordion accordion-flush" id="parentAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-parentHeading">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-parentCollapse"
+                    aria-expanded="false"
+                    aria-controls="flush-parentCollapse"
+                    id="parent-accordion"
+                  >
+                    Python
+                  </button>
+                </h2>
+                <div
+                  id="flush-parentCollapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-parentHeading"
+                  data-bs-parent="#parentAccordion"
+                >
+                  <div class="accordion-body">
+                    <!-- Start of Child Accordion -->
+                    <div class="accordion" id="childAccordion">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="childHeadingOne">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#childCollapseOne"
+                            aria-expanded="false"
+                            aria-controls="childCollapseOne"
+                          >
+                            Python Quiz 01
+                          </button>
+                        </h2>
+                        <div
+                          id="childCollapseOne"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="childHeadingOne"
+                          data-bs-parent="#childAccordion"
+                        >
+
+                        <div class="table-parent">
+                          
+                        <table class="table quiz-detail-table">
+                          <thead>
+                            <tr>
+                              <th>Quiz name</th>
+                              <td>Python Quiz # 01</td>
+                            </tr>      
+                          </thead>
+                          <div class="line" ></div>
+                          <tbody>
+                            <tr>
+                              <th>Total questions</th>
+                              <td>10</td>
+                            </tr>
+                            <tr>
+                              <th>Passing score</th>
+                              <td>75%</td>
+                            </tr>
+                            <tr class="last-tr" >
+                              <td colspan="2">
+                                <button class="btn btn-primary theme-btn" id="quiz-one-start-btn" >
+                                  Continue
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                      </div>
+
+                    <!-- End of Child Accordion -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ------ -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="quiz_01_intro.js" type="module"></script>
+
+    <script src="../Local Storage in JavaScript/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

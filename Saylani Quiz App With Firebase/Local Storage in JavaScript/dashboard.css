@@ -1,0 +1,141 @@
+/* importing the font family */
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.logOut_class {
+  cursor: pointer;
+}
+
+.mini-container-of-body {
+  padding: 2rem 0 0 0;
+}
+
+.mini-container-of-body h1 {
+  color: #0d6db7;
+  font-weight: 300 !important;
+}
+
+.mini-container-of-body p {
+  font-weight: 400;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 2rem 4rem;
+  min-height: 30vh;
+  background-color: #e9ecef;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-body .btn {
+  color: #0d6db7;
+  background-color: rgb(255, 255, 255);
+}
+
+#User-profile-pic {
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 0.5rem;
+  border-radius: 100px !important;
+  width: 32px;
+  height: 32px;
+}
+
+#right-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#right-navbar p {
+  margin: 0;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  color: #0d6db7;
+  justify-content: center;
+  position: relative;
+}
+
+.details svg {
+  cursor: pointer;
+}
+
+/* Balance these div boxes with fixed height */
+
+.title-and-subject {
+  min-height: 100px;
+}
+
+#spinner-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ---------------------------------------------------------------------- Now Let's focus on the pop up of results and log out -------------------------------------------------------------- */
+
+.logout-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 0.3rem;
+  color: black;
+}
+
+.popup-content {
+  position: absolute;
+  z-index: 2;
+  width: 200px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(187, 187, 187);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+  padding: 5px;
+  top: 38px;
+  right: -30px;
+}
+
+.logout-bar:hover {
+  background-color: #0d6db7;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+  .title-and-subject {
+    min-height: 140px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title-and-subject {
+    min-height: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .popup-content {
+    right: -10px;
+  }
+}
